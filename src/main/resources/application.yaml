@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: users_api_mecroservice_on_webflux
+  docker:
+    compose:
+      enabled: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  r2dbc:
+    name: postgres
+    password: 1234
+    url: r2dbc:postgresql://127.0.0.1:5433/users_api
+  flyway:
+    enabled: true
+    user: postgres
+    password: 1234
+    url: jdbc:postgresql://127.0.0.1:5433/users_api
+
+

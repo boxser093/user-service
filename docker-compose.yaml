@@ -1,0 +1,20 @@
+version: '3.8'
+
+volumes:
+  users_api_service:
+
+services:
+  user_service_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: users_api
+    volumes:
+      - users_api_service:/var/lib/postgresql/data
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "127.0.0.1:5433:5432"

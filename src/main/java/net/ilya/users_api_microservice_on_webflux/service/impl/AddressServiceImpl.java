@@ -23,7 +23,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Mono<Address> findById(UUID uuid) {
-        return addressRepository.findById(uuid);
+        return addressRepository.findById(uuid)
+                .switchIfEmpty(Mono.error(()-> new ObjectNotExist(uuid.toString())));
     }
 
     @Override

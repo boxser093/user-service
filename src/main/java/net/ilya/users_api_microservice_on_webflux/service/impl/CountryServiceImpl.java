@@ -28,8 +28,7 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Mono<Country> create(Country country) {
-        return countryRepository.findCountryByNameAndAlpha2(country.getName(), country.getAlpha2())
-                .flatMap(countryExist -> Mono.error(new DuplicateResourceException(country.toString())))
+        return Mono.just(country).flatMap(this::findByNameAndAlpha2AndAlpha3)
                 .switchIfEmpty(Mono.defer(() -> countryRepository.save(country.toBuilder()
                         .created(LocalDateTime.now())
                         .updated(LocalDateTime.now())
@@ -66,7 +65,8 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public Mono<Country> findByNameAndAlpha2(String nameCountry, String alpha2) {
-        return countryRepository.findCountryByNameAndAlpha2(nameCountry, alpha2);
+    public Mono<Country> findByNameAndAlpha2AndAlpha3(Country country) {
+        return countryRepository.findCountryByNameAndAlpha2AAndAlpha3(country.getName(),country.getAlpha2(),country.getAlpha3());
     }
+
 }

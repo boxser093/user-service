@@ -1,9 +1,7 @@
 package net.ilya.users_api_microservice_on_webflux.service.impl;
 
-import net.ilya.users_api_microservice_on_webflux.dto.AddressDto;
-import net.ilya.users_api_microservice_on_webflux.dto.CountryDto;
-import net.ilya.users_api_microservice_on_webflux.dto.IndividualDto;
-import net.ilya.users_api_microservice_on_webflux.dto.UserDto;
+
+import net.ilya.users_api_microservice_on_webflux.dto.*;
 import net.ilya.users_api_microservice_on_webflux.entity.*;
 import net.ilya.users_api_microservice_on_webflux.mapper.IndividualMapper;
 import net.ilya.users_api_microservice_on_webflux.repository.IndividualRepository;

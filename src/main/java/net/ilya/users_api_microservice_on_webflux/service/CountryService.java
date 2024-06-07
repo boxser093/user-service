@@ -4,5 +4,6 @@ import net.ilya.users_api_microservice_on_webflux.entity.Country;
 import reactor.core.publisher.Mono;
 
 public interface CountryService extends GenericService<Country,Long> {
-    Mono<Country> findByNameAndAlpha2(String nameCountry, String alpha2);
+
+    Mono<Country> findByNameAndAlpha2AndAlpha3(Country country);
 }

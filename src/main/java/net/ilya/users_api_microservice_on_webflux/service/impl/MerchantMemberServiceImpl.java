@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.ilya.users_api_microservice_on_webflux.entity.*;
 import net.ilya.users_api_microservice_on_webflux.error.ObjectNotExist;
-import net.ilya.users_api_microservice_on_webflux.mapper.MerchantMemberMapper;
 import net.ilya.users_api_microservice_on_webflux.repository.MerchantMemberRepository;
 import net.ilya.users_api_microservice_on_webflux.service.*;
 import org.springframework.stereotype.Service;

@@ -28,8 +28,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Mono<Address> create(Address address) {
-        return addressRepository.findAddressByAddressAndZipCode(address.getAddress(), address.getZipCode())
-                .flatMap(addressExist -> Mono.error(new DuplicateResourceException(address.toString())))
+        return Mono.just(address).flatMap(this::findAddressByAddressAndZipCodeAndCityAndState)
                 .switchIfEmpty(Mono.defer(() -> addressRepository.save(address.toBuilder()
                         .created(LocalDateTime.now())
                         .updated(LocalDateTime.now())
@@ -66,8 +65,8 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public Mono<Address> findByAddressAndZipCode(String address, String zipCode) {
-        return addressRepository.findAddressByAddressAndZipCode(address, zipCode);
+    public Mono<Address> findAddressByAddressAndZipCodeAndCityAndState(Address address) {
+        return addressRepository.findAddressByAddressAndZipCodeAndCityAndState(address.getAddress(), address.getZipCode(),address.getCity(),address.getState());
     }
 
 }

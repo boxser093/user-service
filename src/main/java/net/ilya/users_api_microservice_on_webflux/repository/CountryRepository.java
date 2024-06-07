@@ -8,6 +8,6 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface CountryRepository extends R2dbcRepository<Country, Long> {
-    @Query("SELECT * FROM person.countries where name=:name and alpha2=:alpha2 FOR UPDATE")
-    Mono<Country> findCountryByNameAndAlpha2(String name, String alpha2);
+    @Query("SELECT * FROM person.countries where name=:name and alpha2=:alpha2 and alpha3=:alpha3 FOR UPDATE")
+    Mono<Country> findCountryByNameAndAlpha2AAndAlpha3(String name, String alpha2, String alpha3);
 }

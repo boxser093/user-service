@@ -2,13 +2,9 @@ package net.ilya.users_api_microservice_on_webflux.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.ilya.users_api_microservice_on_webflux.dto.IndividualDto;
-import net.ilya.users_api_microservice_on_webflux.dto.MerchantDto;
 import net.ilya.users_api_microservice_on_webflux.entity.*;
 import net.ilya.users_api_microservice_on_webflux.error.DuplicateResourceException;
-import net.ilya.users_api_microservice_on_webflux.error.IndividualNonExistentById;
 import net.ilya.users_api_microservice_on_webflux.error.ObjectNotExist;
-import net.ilya.users_api_microservice_on_webflux.mapper.MerchantMapper;
 import net.ilya.users_api_microservice_on_webflux.repository.MerchantRepository;
 import net.ilya.users_api_microservice_on_webflux.service.MerchantService;
 import net.ilya.users_api_microservice_on_webflux.service.UserService;

@@ -1,6 +1,5 @@
 package net.ilya.users_api_microservice_on_webflux.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;

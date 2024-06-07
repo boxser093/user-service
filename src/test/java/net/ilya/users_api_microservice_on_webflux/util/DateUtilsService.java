@@ -2,6 +2,8 @@ package net.ilya.users_api_microservice_on_webflux.util;
 
 import net.ilya.users_api_microservice_on_webflux.dto.*;
 import net.ilya.users_api_microservice_on_webflux.entity.*;
+import net.ilya.users_api_microservice_on_webflux.entity.MemberRole;
+import net.ilya.users_api_microservice_on_webflux.entity.StatusEntity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

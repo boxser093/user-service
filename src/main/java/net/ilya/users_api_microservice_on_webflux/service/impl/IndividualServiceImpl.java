@@ -2,6 +2,8 @@ package net.ilya.users_api_microservice_on_webflux.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import net.ilya.users_api_microservice_on_webflux.dto.ErrorResponse;
 import net.ilya.users_api_microservice_on_webflux.dto.IndividualDto;
 import net.ilya.users_api_microservice_on_webflux.entity.*;
 import net.ilya.users_api_microservice_on_webflux.error.DuplicateResourceException;
@@ -30,10 +32,6 @@ public class IndividualServiceImpl implements IndividualService {
     private final VerificationStatusService verificationStatusService;
     private final JsonParserCustom jsonParser;
 
-    //TODO:
-    // 5. Покрыть все тестами,
-    // 6. Проверить юнит тестами сервис,
-    // 7. Вынести ошибки в методы создания кантри адресс юзера и индивидуала а не локально в методе создания.
     @Override
     public Mono<Individual> findById(UUID uuid) {
         log.info("# In IndividualServiceImpl findById -{}", uuid);
@@ -108,6 +106,7 @@ public class IndividualServiceImpl implements IndividualService {
                         .verifiedAt(profileHistory.getCreated())
                         .build())).map(mapper::map);
     }
+
 
     @Override
     public Mono<IndividualDto> deletedIndividual(UUID uuid) {

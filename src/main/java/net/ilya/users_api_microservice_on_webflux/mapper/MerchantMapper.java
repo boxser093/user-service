@@ -1,5 +1,6 @@
 package net.ilya.users_api_microservice_on_webflux.mapper;
 
+
 import net.ilya.users_api_microservice_on_webflux.dto.MerchantDto;
 import net.ilya.users_api_microservice_on_webflux.entity.Merchant;
 import org.mapstruct.InheritInverseConfiguration;
